@@ -7,6 +7,7 @@ import org.junit.Test;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.util.List;
+import java.util.Map;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
@@ -18,5 +19,8 @@ public class ExcelReaderTest {
         ImportReader reader=new ExcelReader(new ByteArrayInputStream(bytes));
         List<String> tables = reader.getTables();
         assertThat(tables.size(),is(1));
+        List<Map<String, Object>> rows = reader.getRows("t_user");
+        assertThat(rows.size(),is(1));
+        assertThat(rows.get(0).get("id"),is("1"));
     }
 }
