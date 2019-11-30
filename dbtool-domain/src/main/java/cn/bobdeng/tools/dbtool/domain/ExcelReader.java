@@ -20,7 +20,7 @@ import java.util.stream.IntStream;
 public class ExcelReader implements ImportReader {
     private final Workbook workbook;
 
-    public ExcelReader(InputStream inputStream) throws IOException {
+    public ExcelReader(InputStream inputStream) throws Exception {
         workbook = WorkbookFactory.create(inputStream);
     }
 
@@ -55,7 +55,7 @@ public class ExcelReader implements ImportReader {
         Map<String, Object> result = new LinkedHashMap();
         for (int i = 0; i < columns.size(); i++) {
             Cell cell = row.getCell(i);
-            if (cell.getCellType() == CellType.NUMERIC) {
+            if (cell.getCellTypeEnum() == CellType.NUMERIC) {
                 result.put(columns.get(i), NumberToTextConverter.toText(cell.getNumericCellValue()));
                 continue;
             }

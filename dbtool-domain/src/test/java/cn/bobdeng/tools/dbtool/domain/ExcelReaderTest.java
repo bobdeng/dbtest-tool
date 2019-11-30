@@ -1,11 +1,9 @@
 package cn.bobdeng.tools.dbtool.domain;
 
 import com.google.common.io.Resources;
-import com.sun.xml.internal.messaging.saaj.util.ByteInputStream;
 import org.junit.Test;
 
 import java.io.ByteArrayInputStream;
-import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
 

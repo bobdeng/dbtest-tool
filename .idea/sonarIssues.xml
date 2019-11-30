@@ -3,12 +3,47 @@
   <component name="issues">
     <option name="index">
       <map>
+        <entry key="$PROJECT_DIR$/../../spc/mainserver/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../spc/mainserver/src/main/java/cn/bobdeng/spc/mainserver/BaseController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../spc/mainserver/src/main/java/cn/bobdeng/spc/mainserver/MainserverApplication.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../spc/mainserver/src/main/java/cn/bobdeng/spc/mainserver/security/LoginController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../spc/mainserver/src/main/java/cn/bobdeng/spc/mainserver/security/SecSecurityConfig.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/dbtool-domain/pom.xml">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/dbtool-domain/src/main/java/cn/bobdeng/tools/dbtool/domain/DataImporter.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/dbtool-domain/src/main/java/cn/bobdeng/tools/dbtool/domain/ExcelPOI3Reader.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/dbtool-domain/src/main/java/cn/bobdeng/tools/dbtool/domain/ExcelPOI4Reader.java">
           <value>
             <set />
           </value>
@@ -54,6 +89,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/a.dummy">
           <value>
             <set />
           </value>

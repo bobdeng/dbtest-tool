@@ -1,1 +1,3 @@
 dbtool-domain/target/**
+dbtool-server/target/**
+.idea/**
