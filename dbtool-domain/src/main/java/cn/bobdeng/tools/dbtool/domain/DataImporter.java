@@ -27,9 +27,15 @@ public class DataImporter {
                 .map(name->"`"+name+"`")
                 .collect(Collectors.joining(",", "(", ")"));
         String values = row.entrySet().stream().map(stringObjectEntry -> stringObjectEntry.getValue())
-                .map(Object::toString)
-                .map(value->"'"+value+"'")
+                .map(this::toValueString)
                 .collect(Collectors.joining(",", "(", ")"));
         sqlExecutor.executeSql("insert into "+tableName +" "+names+" values"+values);
+    }
+
+    private String toValueString(Object o) {
+        if(o instanceof Integer){
+            return o.toString();
+        }
+        return "'"+o.toString()+"'";
     }
 }
