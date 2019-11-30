@@ -58,7 +58,7 @@ public class ImportFromExcelTest {
         DataImporter dataImporter = new DataImporter(reader);
         dataImporter.importToDB();
 
-        verify(Globals.sqlExecutor,times(2)).executeSql(sqlCaptor.capture());
+        verify(Globals.sqlExecutor, times(2)).executeSql(sqlCaptor.capture());
         List<String> allValues = sqlCaptor.getAllValues();
         assertThat(allValues.size(), is(2));
         assertThat(allValues.get(0), is("truncate table table_1"));

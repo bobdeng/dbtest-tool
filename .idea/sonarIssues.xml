@@ -13,6 +13,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/dbtool-domain/src/main/java/cn/bobdeng/tools/dbtool/domain/ExcelReader.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/dbtool-domain/src/main/java/cn/bobdeng/tools/dbtool/domain/Globals.java">
           <value>
             <set />
@@ -24,6 +29,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/dbtool-domain/src/main/java/cn/bobdeng/tools/dbtool/domain/SQLExecutor.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/dbtool-domain/src/test/java/cn/bobdeng/tools/dbtool/domain/ExcelReaderTest.java">
           <value>
             <set />
           </value>
