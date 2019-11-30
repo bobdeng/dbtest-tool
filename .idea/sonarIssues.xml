@@ -3,6 +3,11 @@
   <component name="issues">
     <option name="index">
       <map>
+        <entry key="$MAVEN_REPOSITORY$/cn/bobdeng/test/dbtool-server/1.0-SNAPSHOT/dbtool-server-1.0-SNAPSHOT.jar!/cn/bobdeng/tool/dbtool/server/DBToolController.class">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../../spc/mainserver/pom.xml">
           <value>
             <set />
@@ -64,6 +69,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/dbtool-domain/src/main/java/cn/bobdeng/tools/dbtool/domain/SQLExecutor.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/dbtool-domain/src/main/java/cn/bobdeng/tools/dbtool/domain/TableField.java">
           <value>
             <set />
           </value>

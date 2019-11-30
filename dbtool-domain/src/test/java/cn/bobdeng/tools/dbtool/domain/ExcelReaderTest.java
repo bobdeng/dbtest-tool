@@ -19,6 +19,6 @@ public class ExcelReaderTest {
         assertThat(tables.size(),is(1));
         List<Map<String, Object>> rows = reader.getRows("t_user");
         assertThat(rows.size(),is(1));
-        assertThat(rows.get(0).get("id"),is("1"));
+        assertThat(rows.get(0).get("id"),is(1));
     }
 }

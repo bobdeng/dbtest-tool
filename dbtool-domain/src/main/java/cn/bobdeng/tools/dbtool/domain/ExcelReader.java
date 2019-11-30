@@ -1,16 +1,9 @@
 package cn.bobdeng.tools.dbtool.domain;
 
-import org.apache.poi.hssf.usermodel.HSSFFormulaEvaluator;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.util.NumberToTextConverter;
-import org.apache.poi.xssf.usermodel.XSSFFormulaEvaluator;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
 import java.io.InputStream;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -34,12 +27,13 @@ public class ExcelReader implements ImportReader {
     @Override
     public List<Map<String, Object>> getRows(String tableName) {
         Sheet sheet = workbook.getSheet(tableName);
-        Row firstRow = sheet.getRow(0);
-        List<String> columns = IntStream.range(0, firstRow.getLastCellNum())
-                .mapToObj(i -> firstRow.getCell(i).getStringCellValue())
+        Row typeRow = sheet.getRow(0);
+        Row columnRow = sheet.getRow(1);
+        List<TableField> columns = IntStream.range(0, typeRow.getLastCellNum())
+                .mapToObj(i -> new TableField(typeRow.getCell(i).getStringCellValue(), columnRow.getCell(i).getStringCellValue()))
                 .collect(Collectors.toList());
         int lastRowNum = sheet.getLastRowNum();
-        return IntStream.range(1, lastRowNum + 1)
+        return IntStream.range(2, lastRowNum + 1)
                 .mapToObj(i -> {
                     Row row = sheet.getRow(i);
 
@@ -49,19 +43,28 @@ public class ExcelReader implements ImportReader {
                 .collect(Collectors.toList());
     }
 
-    private Map<String, Object> readRow(List<String> columns, Row row) {
-
+    private Map<String, Object> readRow(List<TableField> columns, Row row) {
 
         Map<String, Object> result = new LinkedHashMap();
         for (int i = 0; i < columns.size(); i++) {
             Cell cell = row.getCell(i);
-            if (cell.getCellTypeEnum() == CellType.NUMERIC) {
-                result.put(columns.get(i), NumberToTextConverter.toText(cell.getNumericCellValue()));
+            String cellValue = getCellValueString(cell);
+            if (columns.get(i).isInteger()) {
+                result.put(columns.get(i).getName(), Integer.parseInt(cellValue));
                 continue;
             }
-            result.put(columns.get(i), cell.getStringCellValue());
+            result.put(columns.get(i).getName(), cellValue);
 
         }
         return result;
+    }
+
+    private String getCellValueString(Cell cell) {
+        String valueString = "";
+        if (cell.getCellTypeEnum() == CellType.NUMERIC) {
+            return NumberToTextConverter.toText(cell.getNumericCellValue());
+        }
+        valueString = cell.getStringCellValue();
+        return valueString;
     }
 }
