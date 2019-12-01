@@ -27,47 +27,52 @@ public class ExcelReader implements ImportReader {
     @Override
     public List<Map<String, Object>> getRows(String tableName) {
         Sheet sheet = workbook.getSheet(tableName);
+        List<TableField> columns = getTableFields(sheet);
+        return IntStream.range(2, sheet.getLastRowNum() + 1)
+                .mapToObj(i -> readRowValue(sheet, columns, i))
+                .collect(Collectors.toList());
+    }
+
+    private Map<String, Object> readRowValue(Sheet sheet, List<TableField> columns, int rowIndex) {
+        Row row = sheet.getRow(rowIndex);
+        Map<String, Object> values = readRow(columns, row);
+        return values;
+    }
+
+    private List<TableField> getTableFields(Sheet sheet) {
         Row typeRow = sheet.getRow(0);
         Row columnRow = sheet.getRow(1);
-        List<TableField> columns = IntStream.range(0, typeRow.getLastCellNum())
+        return IntStream.range(0, typeRow.getLastCellNum())
                 .mapToObj(i -> new TableField(typeRow.getCell(i).getStringCellValue(), columnRow.getCell(i).getStringCellValue()))
-                .collect(Collectors.toList());
-        int lastRowNum = sheet.getLastRowNum();
-        return IntStream.range(2, lastRowNum + 1)
-                .mapToObj(i -> {
-                    Row row = sheet.getRow(i);
-
-                    Map<String, Object> values = readRow(columns, row);
-                    return values;
-                })
                 .collect(Collectors.toList());
     }
 
     private Map<String, Object> readRow(List<TableField> columns, Row row) {
-
         Map<String, Object> result = new LinkedHashMap();
         for (int i = 0; i < columns.size(); i++) {
             Cell cell = row.getCell(i);
-            String cellValue = getCellValueString(cell);
-            if (columns.get(i).isInteger()) {
-                result.put(columns.get(i).getName(), Integer.parseInt(cellValue));
-                continue;
-            }
-            result.put(columns.get(i).getName(), cellValue);
-
+            TableField column = columns.get(i);
+            readCellValueToRowMap(result, cell, column);
         }
         return result;
     }
 
+    private void readCellValueToRowMap(Map<String, Object> result, Cell cell, TableField column) {
+        String cellValue = getCellValueString(cell);
+        if (column.isInteger()) {
+            result.put(column.getName(), Integer.parseInt(cellValue));
+            return;
+        }
+        result.put(column.getName(), cellValue);
+    }
+
     private String getCellValueString(Cell cell) {
-        String valueString = "";
         if(cell == null){
             return null;
         }
         if (cell.getCellTypeEnum() == CellType.NUMERIC) {
             return NumberToTextConverter.toText(cell.getNumericCellValue());
         }
-        valueString = cell.getStringCellValue();
-        return valueString;
+        return cell.getStringCellValue();
     }
 }

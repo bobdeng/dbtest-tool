@@ -3,6 +3,11 @@
   <component name="issues">
     <option name="index">
       <map>
+        <entry key="$MAVEN_REPOSITORY$/cn/bobdeng/test/dbtool-domain/1.0-SNAPSHOT/dbtool-domain-1.0-SNAPSHOT.jar!/cn/bobdeng/tools/dbtool/domain/DataImporter.class">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$MAVEN_REPOSITORY$/cn/bobdeng/test/dbtool-domain/1.0-SNAPSHOT/dbtool-domain-1.0-SNAPSHOT.jar!/cn/bobdeng/tools/dbtool/domain/ExcelReader.class">
           <value>
             <set />
