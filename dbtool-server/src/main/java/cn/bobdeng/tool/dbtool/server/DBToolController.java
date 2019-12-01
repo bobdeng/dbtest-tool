@@ -3,12 +3,16 @@ package cn.bobdeng.tool.dbtool.server;
 import cn.bobdeng.tools.dbtool.domain.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.PreparedStatementCallback;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.PostConstruct;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 @RestController
 public class DBToolController implements SQLExecutor {
@@ -28,7 +32,11 @@ public class DBToolController implements SQLExecutor {
         return "ok";
     }
 
-    public void executeSql(String sql) {
-        jdbcTemplate.execute(sql);
+    public void executeSql(String sql,Object[] values) {
+        if(values.length==0){
+            jdbcTemplate.execute(sql);
+            return;
+        }
+        jdbcTemplate.update(sql,values);
     }
 }
