@@ -64,4 +64,5 @@ public class ImportFromExcelTest {
         assertThat(allValues.get(0), is("truncate table table_1"));
         assertThat(allValues.get(1), is("insert into table_1 (`id`,`name`) values(1,'bob')"));
     }
+
 }
