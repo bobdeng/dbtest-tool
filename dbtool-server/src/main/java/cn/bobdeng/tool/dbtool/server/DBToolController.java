@@ -33,10 +33,6 @@ public class DBToolController implements SQLExecutor {
     }
 
     public void executeSql(String sql,Object[] values) {
-        if(values.length==0){
-            jdbcTemplate.execute(sql);
-            return;
-        }
         jdbcTemplate.update(sql,values);
     }
 }
