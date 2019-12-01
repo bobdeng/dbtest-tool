@@ -65,4 +65,25 @@ public class ImportFromExcelTest {
         assertThat(allValues.get(1), is("insert into table_1 (`id`,`name`) values(1,'bob')"));
     }
 
+    @Test
+    public void should_not_insert_when_value_is_null_when_has_data() {
+        ArgumentCaptor<String> sqlCaptor = ArgumentCaptor.forClass(String.class);
+        ImportReader reader = mock(ImportReader.class);
+        when(reader.getTables()).thenReturn(Arrays.asList("table_1"));
+        Map<String, Object> row = new LinkedHashMap<>();
+        row.put("id", 1);
+        row.put("name", "bob");
+        row.put("address", null);
+        when(reader.getRows("table_1")).thenReturn(Arrays.asList(row));
+
+        DataImporter dataImporter = new DataImporter(reader);
+        dataImporter.importToDB();
+
+        verify(Globals.sqlExecutor, times(2)).executeSql(sqlCaptor.capture());
+        List<String> allValues = sqlCaptor.getAllValues();
+        assertThat(allValues.size(), is(2));
+        assertThat(allValues.get(0), is("truncate table table_1"));
+        assertThat(allValues.get(1), is("insert into table_1 (`id`,`name`) values(1,'bob')"));
+    }
+
 }
