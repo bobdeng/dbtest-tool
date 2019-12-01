@@ -61,6 +61,9 @@ public class ExcelReader implements ImportReader {
 
     private String getCellValueString(Cell cell) {
         String valueString = "";
+        if(cell == null){
+            return null;
+        }
         if (cell.getCellTypeEnum() == CellType.NUMERIC) {
             return NumberToTextConverter.toText(cell.getNumericCellValue());
         }

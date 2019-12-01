@@ -9,6 +9,7 @@ import java.util.Map;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
+import static org.mockito.ArgumentMatchers.isNull;
 
 public class ExcelReaderTest {
     @Test
@@ -20,5 +21,14 @@ public class ExcelReaderTest {
         List<Map<String, Object>> rows = reader.getRows("t_user");
         assertThat(rows.size(),is(1));
         assertThat(rows.get(0).get("id"),is(1));
+    }
+    @Test
+    public void test_has_null_cell()throws Exception{
+        byte[] bytes = Resources.toByteArray(Resources.getResource("devices.xlsx"));
+        ImportReader reader=new ExcelReader(new ByteArrayInputStream(bytes));
+        List<String> tables = reader.getTables();
+        assertThat(tables.size(),is(1));
+        List<Map<String, Object>> rows = reader.getRows("t_spc_device");
+        assertNull(rows.get(0).get("script"));
     }
 }

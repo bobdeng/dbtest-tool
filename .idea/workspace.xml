@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5fa7d407-98df-440d-b3cc-4f5467585737" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/dbtool-domain/src/test/java/cn/bobdeng/tools/dbtool/domain/ImportFromExcelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/dbtool-domain/src/test/java/cn/bobdeng/tools/dbtool/domain/ImportFromExcelTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dbtool-domain/src/test/resources/devices.xlsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -28,10 +28,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dbtool-domain/src/test/java/cn/bobdeng/tools/dbtool/domain/ImportFromExcelTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
+            <state relative-caret-position="275">
               <caret line="64" column="83" selection-start-line="64" selection-start-column="83" selection-end-line="64" selection-end-column="83" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -47,15 +47,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="103">
               <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="19" column="51" selection-start-line="19" selection-start-column="51" selection-end-line="19" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -87,10 +78,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dbtool-domain/src/main/java/cn/bobdeng/tools/dbtool/domain/DataImporter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="365">
+              <caret line="29" column="32" lean-forward="true" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dbtool-domain/src/main/java/cn/bobdeng/tools/dbtool/domain/ExcelReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
-              <caret line="35" column="48" selection-start-line="35" selection-start-column="48" selection-end-line="35" selection-end-column="48" />
+            <state relative-caret-position="169">
+              <caret line="32" column="10" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -152,7 +155,6 @@
         <option value="$PROJECT_DIR$/dbtool-domain/src/main/java/cn/bobdeng/tools/dbtool/domain/Globals.java" />
         <option value="$PROJECT_DIR$/dbtool-domain/src/main/java/cn/bobdeng/tools/dbtool/domain/SQLExecutor.java" />
         <option value="$PROJECT_DIR$/dbtool-domain/src/main/java/cn/bobdeng/tools/dbtool/domain/ImportReader.java" />
-        <option value="$PROJECT_DIR$/dbtool-domain/src/main/java/cn/bobdeng/tools/dbtool/domain/DataImporter.java" />
         <option value="$PROJECT_DIR$/dbtool-server/pom.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/dbtool-domain/src/main/java/cn/bobdeng/tools/dbtool/domain/ExcelPOI4Reader.java" />
@@ -162,6 +164,7 @@
         <option value="$PROJECT_DIR$/dbtool-domain/src/main/java/cn/bobdeng/tools/dbtool/domain/TableField.java" />
         <option value="$PROJECT_DIR$/dbtool-domain/src/main/java/cn/bobdeng/tools/dbtool/domain/ExcelReader.java" />
         <option value="$PROJECT_DIR$/dbtool-domain/src/test/java/cn/bobdeng/tools/dbtool/domain/ImportFromExcelTest.java" />
+        <option value="$PROJECT_DIR$/dbtool-domain/src/main/java/cn/bobdeng/tools/dbtool/domain/DataImporter.java" />
       </list>
     </option>
   </component>
@@ -310,7 +313,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/dbtool-domain/src/main/java" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/dbtool-domain/src/test/java/cn/bobdeng/tools/dbtool/domain" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/dbtool-domain/src/test/resources" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -332,6 +335,7 @@
       <recent name="$PROJECT_DIR$/dbtool-domain/src/test/resources" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/dbtool-domain/src/test/resources" />
       <recent name="$PROJECT_DIR$/dbtool-domain/src/test/java/cn/bobdeng/tools/dbtool/domain" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -353,7 +357,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.cn.bobdeng.tools.dbtool.domain in dbtooldomain">
+  <component name="RunManager" selected="JUnit.ExcelReaderTest.test_has_null_cell">
     <configuration name="ExcelReaderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="dbtooldomain" />
       <extension name="coverage">
@@ -365,6 +369,22 @@
       <option name="PACKAGE_NAME" value="cn.bobdeng.tools.dbtool.domain" />
       <option name="MAIN_CLASS_NAME" value="cn.bobdeng.tools.dbtool.domain.ExcelReaderTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ExcelReaderTest.test_has_null_cell" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="dbtooldomain" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.bobdeng.tools.dbtool.domain.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.bobdeng.tools.dbtool.domain" />
+      <option name="MAIN_CLASS_NAME" value="cn.bobdeng.tools.dbtool.domain.ExcelReaderTest" />
+      <option name="METHOD_NAME" value="test_has_null_cell" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -417,6 +437,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ExcelReaderTest.test_has_null_cell" />
         <item itemvalue="JUnit.cn.bobdeng.tools.dbtool.domain in dbtooldomain" />
         <item itemvalue="JUnit.ExcelReaderTest" />
         <item itemvalue="JUnit.ExcelReaderTest.test_t_user" />
@@ -435,23 +456,11 @@
       <option name="presentableId" value="Default" />
       <updated>1575116668045</updated>
       <workItem from="1575116669480" duration="4341000" />
-      <workItem from="1575122199698" duration="2742000" />
+      <workItem from="1575122199698" duration="3892000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ExcelReaderTest - 2019.11.30 at 22h 15m 54s.xml">
-      <configuration name="ExcelReaderTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ExcelReaderTest - 2019.11.30 at 22h 41m 52s.xml">
-      <configuration name="ExcelReaderTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ExcelReaderTest - 2019.11.30 at 22h 42m 59s.xml">
-      <configuration name="ExcelReaderTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ExcelReaderTest - 2019.11.30 at 22h 46m 37s.xml">
-      <configuration name="ExcelReaderTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="ExcelReaderTest - 2019.11.30 at 22h 48m 55s.xml">
       <configuration name="ExcelReaderTest" configurationId="JUnit" />
     </history-entry>
@@ -470,15 +479,26 @@
     <history-entry file="cn_bobdeng_tools_dbtool_domain_in_dbtooldomain - 2019.11.30 at 22h 50m 23s.xml">
       <configuration name="cn.bobdeng.tools.dbtool.domain in dbtooldomain" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="cn_bobdeng_tools_dbtool_domain_in_dbtooldomain - 2019.11.30 at 22h 50m 48s.xml">
+      <configuration name="cn.bobdeng.tools.dbtool.domain in dbtooldomain" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="cn_bobdeng_tools_dbtool_domain_in_dbtooldomain - 2019.11.30 at 22h 52m 13s.xml">
+      <configuration name="cn.bobdeng.tools.dbtool.domain in dbtooldomain" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="cn_bobdeng_tools_dbtool_domain_in_dbtooldomain - 2019.11.30 at 22h 52m 30s.xml">
+      <configuration name="cn.bobdeng.tools.dbtool.domain in dbtooldomain" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="cn_bobdeng_tools_dbtool_domain_in_dbtooldomain - 2019.11.30 at 22h 52m 37s.xml">
+      <configuration name="cn.bobdeng.tools.dbtool.domain in dbtooldomain" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7083000" />
+    <option name="totallyTimeSpent" value="8233000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="23" width="1416" height="797" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2532751" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2532751" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -496,7 +516,7 @@
       <window_info anchor="bottom" id="FindBugs-IDEA" order="7" />
       <window_info anchor="bottom" id="Analysis" order="8" />
       <window_info anchor="bottom" id="Spring" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32991204" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32991204" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="CheckStyle" order="12" />
       <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" />
@@ -561,18 +581,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dbtool-domain/src/main/java/cn/bobdeng/tools/dbtool/domain/DataImporter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="32" column="44" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#217#218#0" expanded="true" />
-            <element signature="e#259#260#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/poi/poi/4.1.0/poi-4.1.0.jar!/org/apache/poi/ss/usermodel/Row.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -620,16 +628,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dbtool-domain/src/main/java/cn/bobdeng/tools/dbtool/domain/ImportReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dbtool-domain/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
@@ -655,16 +653,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dbtool-domain/src/main/java/cn/bobdeng/tools/dbtool/domain/ExcelReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="35" column="48" selection-start-line="35" selection-start-column="48" selection-end-line="35" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dbtool-domain/src/test/java/cn/bobdeng/tools/dbtool/domain/ExcelReaderTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -677,12 +665,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dbtool-domain/src/test/java/cn/bobdeng/tools/dbtool/domain/ImportFromExcelTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
+        <state relative-caret-position="275">
           <caret line="64" column="83" selection-start-line="64" selection-start-column="83" selection-end-line="64" selection-end-column="83" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#339#340#0" expanded="true" />
             <element signature="e#400#401#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dbtool-domain/src/main/java/cn/bobdeng/tools/dbtool/domain/ImportReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dbtool-domain/src/main/java/cn/bobdeng/tools/dbtool/domain/DataImporter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="29" column="32" lean-forward="true" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dbtool-domain/src/main/java/cn/bobdeng/tools/dbtool/domain/ExcelReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="32" column="10" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

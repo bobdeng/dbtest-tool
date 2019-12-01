@@ -46,7 +46,7 @@ public class ImportFromExcelTest {
     }
 
     @Test
-    public void should_truncate_table_when_has_data() {
+    public void should_truncate_table_and_insert_when_has_data() {
         ArgumentCaptor<String> sqlCaptor = ArgumentCaptor.forClass(String.class);
         ImportReader reader = mock(ImportReader.class);
         when(reader.getTables()).thenReturn(Arrays.asList("table_1"));
