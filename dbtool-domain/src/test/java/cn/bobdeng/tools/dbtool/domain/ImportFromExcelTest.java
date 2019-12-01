@@ -50,6 +50,7 @@ public class ImportFromExcelTest {
     public void should_truncate_table_and_insert_when_has_data() {
         ArgumentCaptor<String> sqlCaptor = ArgumentCaptor.forClass(String.class);
         ArgumentCaptor<Object[]> valuesCaptor = ArgumentCaptor.forClass(Object[].class);
+
         ImportReader reader = mock(ImportReader.class);
         when(reader.getTables()).thenReturn(Arrays.asList("table_1"));
         Map<String, Object> row = new LinkedHashMap<>();
