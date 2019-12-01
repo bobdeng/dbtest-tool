@@ -9,7 +9,7 @@
         
 # config
 ```
-            @Bean
+    @Bean
     @Profile({"dev","test"})
     public DBToolController dbToolController() {
         return new DBToolController();
