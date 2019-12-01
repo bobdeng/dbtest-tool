@@ -14,7 +14,7 @@
     }
     
 # use
-"curl -F 'file=@test_data/abc.xlsx http://localhost:8080/dbtool/import"
+curl -F 'file=@test_data/abc.xlsx' http://localhost:8080/dbtool/import
 
 # excel exapmle
 
