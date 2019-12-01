@@ -70,6 +70,7 @@ public class ExcelReader implements ImportReader {
         if(cell == null){
             return null;
         }
+        //for poi 3
         if (cell.getCellTypeEnum() == CellType.NUMERIC) {
             return NumberToTextConverter.toText(cell.getNumericCellValue());
         }
