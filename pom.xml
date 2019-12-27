@@ -25,4 +25,14 @@
             </plugin>
         </plugins>
     </build>
+    <distributionManagement>
+        <repository>
+            <id>ag-releases</id>
+            <url>https://repo.rdc.aliyun.com/repository/37898-release-Bi40SO/</url>
+        </repository>
+        <snapshotRepository>
+            <id>ag-snapshots</id>
+            <url>https://repo.rdc.aliyun.com/repository/37898-snapshot-pOzUJP/</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>
