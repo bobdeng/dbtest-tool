@@ -59,7 +59,7 @@ public class DBToolController implements SQLExecutor {
             ResultSetMetaData rsmd = resultSet.getMetaData();
             int columnCount = rsmd.getColumnCount();
             for (int i = 1; i <= columnCount; i++) {
-                TableField column = new TableField(rsmd.getColumnName(i), getColumnTypeName(rsmd, i));
+                TableField column = new TableField(getColumnTypeName(rsmd, i),rsmd.getColumnName(i));
                 result.add(column);
             }
             return columnCount;
