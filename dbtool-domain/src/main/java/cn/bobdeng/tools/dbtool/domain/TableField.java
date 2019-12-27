@@ -4,6 +4,7 @@ package cn.bobdeng.tools.dbtool.domain;
 import lombok.Getter;
 
 public class TableField {
+    @Getter
     private String type;
     @Getter
     private String name;
