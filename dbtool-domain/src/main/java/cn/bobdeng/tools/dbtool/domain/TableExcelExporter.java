@@ -1,5 +1,6 @@
 package cn.bobdeng.tools.dbtool.domain;
 
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -19,11 +20,7 @@ public class TableExcelExporter implements TableExporter {
     public TableExcelExporter(List<String> tableNames) {
 
         this.tableNames = tableNames;
-        try {
-            workbook = WorkbookFactory.create(true);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        workbook = new HSSFWorkbook();
     }
 
     @Override

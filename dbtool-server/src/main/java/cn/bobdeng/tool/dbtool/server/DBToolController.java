@@ -44,7 +44,7 @@ public class DBToolController implements SQLExecutor {
     public void export(@RequestParam("table") String[] tableNames, HttpServletResponse response) throws Exception {
         TableExporter tableExporter = new TableExcelExporter(Arrays.asList(tableNames));
         response.setContentType("application/vnd.ms-excel");
-        response.setHeader("Content-Disposition", "attachment; filename=\"export.xlsx\"");
+        response.setHeader("Content-Disposition", "attachment; filename=\"export.xls\"");
         tableExporter.export(response.getOutputStream());
     }
 
@@ -78,9 +78,9 @@ public class DBToolController implements SQLExecutor {
             ResultSetMetaData metaData = resultSet.getMetaData();
             int columnCount = metaData.getColumnCount();
             for (int j = 0; j < columnCount; j++) {
-                Object object = resultSet.getObject(j);
+                Object object = resultSet.getObject(j+1);
                 if (object != null) {
-                    values.put(metaData.getColumnName(j), object.toString());
+                    values.put(metaData.getColumnName(j+1), object.toString());
                 }
             }
             return values;
