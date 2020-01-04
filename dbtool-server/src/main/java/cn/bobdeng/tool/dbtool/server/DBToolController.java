@@ -7,15 +7,13 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCallback;
 import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.jdbc.core.RowMapper;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
@@ -48,6 +46,12 @@ public class DBToolController implements SQLExecutor {
         tableExporter.export(response.getOutputStream());
     }
 
+    @ExceptionHandler(Exception.class)
+    public void onException(Exception e, HttpServletResponse response) throws IOException {
+        response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+        response.getOutputStream().write(Optional.ofNullable(e.getMessage()).orElse("Null").getBytes());
+    }
+
     public void executeSql(String sql, Object[] values) {
         jdbcTemplate.update(sql, values);
     }
@@ -59,7 +63,7 @@ public class DBToolController implements SQLExecutor {
             ResultSetMetaData rsmd = resultSet.getMetaData();
             int columnCount = rsmd.getColumnCount();
             for (int i = 1; i <= columnCount; i++) {
-                TableField column = new TableField(getColumnTypeName(rsmd, i),rsmd.getColumnName(i));
+                TableField column = new TableField(getColumnTypeName(rsmd, i), rsmd.getColumnName(i));
                 result.add(column);
             }
             return columnCount;
@@ -78,9 +82,9 @@ public class DBToolController implements SQLExecutor {
             ResultSetMetaData metaData = resultSet.getMetaData();
             int columnCount = metaData.getColumnCount();
             for (int j = 0; j < columnCount; j++) {
-                Object object = resultSet.getObject(j+1);
+                Object object = resultSet.getObject(j + 1);
                 if (object != null) {
-                    values.put(metaData.getColumnName(j+1), object.toString());
+                    values.put(metaData.getColumnName(j + 1), object.toString());
                 }
             }
             return values;
