@@ -48,6 +48,7 @@ public class DBToolController implements SQLExecutor {
 
     @ExceptionHandler(Exception.class)
     public void onException(Exception e, HttpServletResponse response) throws IOException {
+        e.printStackTrace();
         response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
         response.getOutputStream().write(Optional.ofNullable(e.getMessage()).orElse("Null").getBytes());
     }
@@ -72,6 +73,9 @@ public class DBToolController implements SQLExecutor {
     }
 
     private String getColumnTypeName(ResultSetMetaData rsmd, int i) throws SQLException {
+        if(rsmd.getColumnType(i)==Types.BIT){
+            return "int";
+        }
         return "string";
     }
 
