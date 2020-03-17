@@ -22,8 +22,11 @@ import java.util.*;
 
 @RestController
 public class DBToolController implements SQLExecutor {
-    @Autowired
-    JdbcTemplate jdbcTemplate;
+    private final JdbcTemplate jdbcTemplate;
+
+    public DBToolController(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
 
     @PostConstruct
     public void init() {
