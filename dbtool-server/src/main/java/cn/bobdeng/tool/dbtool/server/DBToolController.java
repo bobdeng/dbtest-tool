@@ -42,7 +42,9 @@ public class DBToolController implements SQLExecutor {
 
     @PostMapping("/dbtool/import")
     public String importFile(@RequestParam("file") MultipartFile file) throws Exception {
-        assert enabled;
+        if(!enabled){
+            return "disabled";
+        }
         ImportReader reader = new ExcelReader(file.getInputStream());
         DataImporter dataImporter = new DataImporter(reader);
         dataImporter.importToDB();
@@ -51,7 +53,9 @@ public class DBToolController implements SQLExecutor {
 
     @GetMapping("/dbtool/export")
     public void export(@RequestParam("table") String[] tableNames, HttpServletResponse response) throws Exception {
-        assert enabled;
+        if(!enabled){
+            return;
+        }
         TableExporter tableExporter = new TableExcelExporter(Arrays.asList(tableNames));
         response.setContentType("application/vnd.ms-excel");
         response.setHeader("Content-Disposition", "attachment; filename=\"export.xls\"");
