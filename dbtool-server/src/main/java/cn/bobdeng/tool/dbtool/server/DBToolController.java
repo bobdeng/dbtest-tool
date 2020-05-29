@@ -28,7 +28,7 @@ import java.util.*;
 @RestController
 public class DBToolController implements SQLExecutor {
     private final JdbcTemplate jdbcTemplate;
-    @Value("${dbtool.enabled:false}")
+    @Value("${dbtool.enabled}")
     public boolean enabled;
 
     public DBToolController(JdbcTemplate jdbcTemplate) {
