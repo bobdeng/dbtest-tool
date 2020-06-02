@@ -42,7 +42,7 @@ public class DBToolController implements SQLExecutor {
 
     @PostMapping("/dbtool/import")
     public String importFile(@RequestParam("file") MultipartFile file) throws Exception {
-        if(!enabled){
+        if (!enabled) {
             return "disabled";
         }
         ImportReader reader = new ExcelReader(file.getInputStream());
@@ -53,10 +53,22 @@ public class DBToolController implements SQLExecutor {
 
     @GetMapping("/dbtool/export")
     public void export(@RequestParam("table") String[] tableNames, HttpServletResponse response) throws Exception {
-        if(!enabled){
+        if (!enabled) {
             return;
         }
         TableExporter tableExporter = new TableExcelExporter(Arrays.asList(tableNames));
+        response.setContentType("application/vnd.ms-excel");
+        response.setHeader("Content-Disposition", "attachment; filename=\"export.xls\"");
+        tableExporter.export(response.getOutputStream());
+    }
+
+    @GetMapping("/dbtool/export_all")
+    public void exportAll(HttpServletResponse response) throws Exception {
+        if (!enabled) {
+            return;
+        }
+        List<String> tableNames = jdbcTemplate.query("show tables", (resultSet, i) -> resultSet.getString(1));
+        TableExporter tableExporter = new TableExcelExporter(tableNames);
         response.setContentType("application/vnd.ms-excel");
         response.setHeader("Content-Disposition", "attachment; filename=\"export.xls\"");
         tableExporter.export(response.getOutputStream());
