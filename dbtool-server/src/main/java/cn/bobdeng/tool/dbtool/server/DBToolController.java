@@ -24,6 +24,7 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Types;
 import java.util.*;
+import java.util.stream.Collectors;
 
 @RestController
 public class DBToolController implements SQLExecutor {
@@ -67,7 +68,9 @@ public class DBToolController implements SQLExecutor {
         if (!enabled) {
             return;
         }
-        List<String> tableNames = jdbcTemplate.query("show tables", (resultSet, i) -> resultSet.getString(1));
+        List<String> tableNames = jdbcTemplate.query("show tables", (resultSet, i) -> resultSet.getString(1)).stream()
+                .filter(name->name.startsWith("t_"))
+                .collect(Collectors.toList());
         TableExporter tableExporter = new TableExcelExporter(tableNames);
         response.setContentType("application/vnd.ms-excel");
         response.setHeader("Content-Disposition", "attachment; filename=\"export.xls\"");
