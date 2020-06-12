@@ -15,6 +15,6 @@ public class TableField {
     }
 
     public boolean isInteger() {
-        return "int".endsWith(type);
+        return "int".equals(type);
     }
 }

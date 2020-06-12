@@ -44,6 +44,7 @@ public class ExcelReader implements ImportReader {
         Row columnRow = sheet.getRow(1);
         return IntStream.range(0, typeRow.getLastCellNum())
                 .mapToObj(i -> new TableField(typeRow.getCell(i).getStringCellValue(), columnRow.getCell(i).getStringCellValue()))
+                .filter(tableField -> !tableField.getType().equals(""))
                 .collect(Collectors.toList());
     }
 
@@ -67,7 +68,7 @@ public class ExcelReader implements ImportReader {
     }
 
     private String getCellValueString(Cell cell) {
-        if(cell == null){
+        if (cell == null) {
             return null;
         }
         //for poi 3
